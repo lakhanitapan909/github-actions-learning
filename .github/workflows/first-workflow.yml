@@ -12,19 +12,22 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Say Hello
-        run: echo echo "Hello from my CI pipeline!"
+        run: echo "Hello from my CI pipeline!"
 
       - name: Show Files
         run: ls -la
 
       - name: Show Current Directory
         run: pwd
+
       - name: Check Runner
         run: |
           echo "I am running on:"
           uname -a
           echo "Operating system:"
           cat /etc/os-release
-                - name: Test Success
+
+      - name: Test Success
+        run: |
           echo "This test passed"
           exit 0
