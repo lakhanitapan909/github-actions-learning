@@ -1,23 +1,44 @@
-name: Environment Variable Practice
+name: My CI Learning Pipeline
 
 on:
   push:
- env:
-  APP_NAME: my-first-app
-  ENVIRONMENT: development
+
 env:
   APP_NAME: my-first-app
+  ENVIRONMENT: development
 
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Show App Name
-        run: echo "Application name is $APP_NAME"
 
-      - name: Show Linux
-        run: uname -a
-     run: |
-    echo "Application: $APP_NAME"
-    echo "Environment: $ENVIRONMENT"
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Say Hello
+        run: echo "Hello from GitHub Actions!"
+
+      - name: Show Application
+        run: echo "Application: $APP_NAME"
+
+      - name: Show Environment
+        run: echo "Environment: $ENVIRONMENT"
+
+      - name: Show Files
+        run: ls -la
+
+      - name: Show Current Directory
+        run: pwd
+
+      - name: Check Runner
+        run: |
+          echo "I am running on:"
+          uname -a
+          echo "Operating system:"
+          cat /etc/os-release
+
+      - name: Test Success
+        run: |
+          echo "Running my test..."
+          exit 0
