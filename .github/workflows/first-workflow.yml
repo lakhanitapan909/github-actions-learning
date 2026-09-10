@@ -25,3 +25,6 @@ jobs:
           uname -a
           echo "Operating system:"
           cat /etc/os-release
+                - name: Test Success
+          echo "This test passed"
+          exit 0
