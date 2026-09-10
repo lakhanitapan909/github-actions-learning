@@ -19,3 +19,9 @@ jobs:
 
       - name: Show Current Directory
         run: pwd
+      - name: Check Runner
+        run: |
+          echo "I am running on:"
+          uname -a
+          echo "Operating system:"
+          cat /etc/os-release
