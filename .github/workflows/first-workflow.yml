@@ -30,4 +30,4 @@ jobs:
       - name: Test Success
         run: |
           echo "This test passed"
-          exit 0
+          exit 1
