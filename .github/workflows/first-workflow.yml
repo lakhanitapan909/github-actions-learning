@@ -10,3 +10,9 @@ jobs:
     steps:
       - name: Say Hello
         run: echo "Hello from GitHub Actions!"
+
+      - name: Check Linux
+        run: uname -a
+
+      - name: Show Current Directory
+        run: pwd
