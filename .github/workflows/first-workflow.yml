@@ -6,12 +6,15 @@ on:
 jobs:
   secret-test:
     runs-on: ubuntu-latest
-
     steps:
-          
-          - name: Show Repository Files
-           run: ls -la
-          - name: show file read
-           run: cat README.md
-          - name: Check README
-           run: test -f README.md
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Show Repository Files
+        run: ls -la
+
+      - name: Show File
+        run: cat README.md
+
+      - name: Check README
+        run: test -f README.md
