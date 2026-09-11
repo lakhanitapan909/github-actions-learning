@@ -8,5 +8,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-          - name: Test Secret
-           run: echo "My secret is ${{ secrets.MYNAME }}"
+          
+          - name: Show Repository Files
+           run: ls -la
+          - name: show file read
+           run: cat README.md
+          - name: Check README
+           run: test -f README.md
