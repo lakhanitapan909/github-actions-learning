@@ -5,6 +5,7 @@ on:
 
 env:
   APP_NAME: my-first-app
+  ENVIRONMENT: development
 
 jobs:
 
@@ -12,18 +13,45 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Say Hello
+        run: echo "Hello from GitHub Actions!"
+
       - name: Show Application
-        run: echo "Testing $APP_NAME"
+        run: echo "Application: $APP_NAME"
+
+      - name: Show Environment
+        run: echo "Environment: $ENVIRONMENT"
+
+      - name: Show Files
+        run: ls -la
+
+      - name: Show Current Directory
+        run: pwd
+
+      - name: Check Runner
+        run: |
+          echo "I am running on:"
+          uname -a
+          echo "Operating system:"
+          cat /etc/os-release
 
       - name: Test Success
         run: |
           echo "Running tests..."
           exit 0
 
+      - name: Test Secret
+        run: echo "My secret is ${{ secrets.myname }}"
+
   build:
     needs: test
     runs-on: ubuntu-latest
 
     steps:
+
       - name: Build Application
         run: echo "Building $APP_NAME"
