@@ -20,12 +20,6 @@ jobs:
       - name: Say Hello
         run: echo "Hello from GitHub Actions!"
 
-      - name: Show Application
-        run: echo "Application: $APP_NAME"
-
-      - name: Show Environment
-        run: echo "Environment: $ENVIRONMENT"
-
       - name: Show Files
         run: ls -la
 
