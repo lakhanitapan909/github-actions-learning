@@ -8,5 +8,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Test Secret
-        run: echo "My secret is ${{ secrets.MYNAME }}"
+          - name: Test Secret
+           run: echo "My secret is ${{ secrets.MYNAME }}"
